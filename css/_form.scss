@@ -1,0 +1,97 @@
+.form {
+    margin-bottom: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    h1 {
+        text-align: center;
+    }
+    input, 
+    select {
+        height: 30px;
+        line-height: 20px;
+        margin: 10px auto;
+    }
+    &__block {
+        label {
+            display: block;
+            background-color: chartreuse;
+        }
+        input {
+            width: 100%;
+            box-sizing: border-box;
+        }
+    }
+    .form__message {
+        height: 200px;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: chocolate;
+    }
+
+    select {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    &__radio {
+        input {
+            margin: 5px;
+            width: 20px;
+        }
+        div {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            div {
+                width: 100%;
+            }
+        }
+
+    }
+    &__checkbox {
+        display: flex;
+        justify-content: space-between;
+        div {
+            height: 40px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        input {
+            height: 20px;
+            width: 20px;
+            margin: 0px;
+        }
+    }
+}
+
+@media (min-width: 600px) {
+    .form {
+        width: 600px;
+        padding: 0;
+        &__block {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0px;
+            form {
+                width: 30%;
+            }
+        }
+        &__radio {
+            div {
+                flex-wrap: nowrap;
+                div {
+                    width: 150px
+                }
+            }
+        }
+    }
+
+}
+
+@media (min-width: 850px) {
+    .form {
+        width: 90%;
+        max-width: 1000px;
+    }
+}

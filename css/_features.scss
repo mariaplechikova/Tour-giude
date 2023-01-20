@@ -1,0 +1,60 @@
+@mixin flex-box($direction) {
+    width: 100%;
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.features_title {
+    text-align: center;
+}
+
+.features {
+    background-color: aqua;
+
+    &>div {
+        height: 200px;
+        @include flex-box($direction: column);
+        gap: 10px;
+        border-bottom: 1px solid gray;
+        text-align: center;
+        background-color: white;
+        padding: 20px;
+    }
+
+    div {
+        div {
+            font-weight: bold;
+        }
+    }
+}
+
+@media (min-width: 600px) {
+    .features {
+        padding: 0;
+        width: 600px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 1px;
+        background-color: gray;
+
+        &>div {
+            border: none;
+            padding: 15px;
+        }
+    }
+    
+}
+
+@media (min-width: 850px) {
+    .features {
+        width: 90%;
+        max-width: 1000px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+

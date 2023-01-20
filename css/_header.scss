@@ -1,0 +1,82 @@
+$black-text-color: black;
+$header-height: 45px;
+@mixin flexable ($dir: row, $justify: flex-start, $align: flex-start) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $justify;
+    align-items: $align;
+}
+@mixin burger-line() {
+    width: 24px;
+    height: 4px;
+    background-color: black;
+}
+.container {
+    max-width: 540px;
+    margin: 0 auto;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    height: $header-height;
+    &__logo {
+        z-index: 3;
+        text-transform: uppercase;
+        font-weight: bold;
+        @include flexable($justify: center, $align: center);
+    }
+    &__nav {
+        @include flexable($justify: center, $align: center);
+    }
+    &__links-list {
+        @include flexable($dir: column, $align: center);
+        gap: 15px;
+        position: fixed;
+        padding: 0;
+        margin: 0;
+        left: 0;
+        top: -500%;
+        width: 100vw;
+        height: 100vh;
+        padding-top: calc(#{$header-height} * 2);
+        background-color: #fff;
+        z-index: 2;
+        transition: all 1s;
+        &-display {
+            top: 0;
+        }
+    }
+    &__burger-button {
+        height: 30px;
+        width: 30px;
+        @include flexable($justify: center, $align: center);
+    }
+    &__link {
+        a {
+            text-decoration: none;
+            color: $black-text-color;
+            font-size: 24px;
+        }
+    }
+    &__burger {
+        z-index: 3;
+        position: relative;
+        @include burger-line();
+        &::after {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: 0;
+            @include burger-line();
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            @include burger-line();
+        }
+    }
+
+
+}
