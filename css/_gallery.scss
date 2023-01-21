@@ -62,17 +62,12 @@ $heightslider: 19vw;
     text-align: center;
 }
 
-body, html {
-    margin: 0;
-    padding: 0;
-}
-
 .gallery {
     margin: 0;
     padding: 0;
     font-size: 16px;
     position: relative;
-    width: 100vw;
+    width: 100%;
     h3 {
         margin: 0px;
     };
@@ -85,11 +80,11 @@ body, html {
             position: relative;
             bottom: 0px;
             left: 0px;
-            width: calc(100vw * 6); 
+            width: calc(100% * 6); 
             .slider-item:nth-child(3n+1) {
                 background-size: cover;
                 @include slider-img($url: '../assets/4.jpg');
-                width: 100vw;
+                width: 100%;
                 height: 67vw;
                 .slider__text {
                     @include slider-description;
@@ -108,7 +103,7 @@ body, html {
             .slider-item:nth-child(3n+2) {
                 background-size: cover;
                 @include slider-img($url: '../assets/5.jpg');
-                width: 100vw;
+                width: 100%;
                 height: 67vw;
                 .slider__text {
                     @include slider-description;
@@ -127,7 +122,7 @@ body, html {
             .slider-item:nth-child(3n+3) {
                 background-size: cover;
                 @include slider-img($url: '../assets/6.jpg');
-                width: 100vw;
+                width: 100%;
                 height: 67vw;
                 .slider__text {
                     @include slider-description;
@@ -146,7 +141,7 @@ body, html {
             .slider-item:nth-child(3n+4) {
                 background-size: cover;
                 @include slider-img($url: '../assets/7.jpg');
-                width: 100vw;
+                width: 100%;
                 height: 67vw;
                 .slider__text {
                     @include slider-description;
@@ -189,17 +184,17 @@ body, html {
     .gallery {
         .slider {
             .slider-track {
-                width: calc(100vw * 3);
+                width: calc(100% * 3);
                 .slider-item:nth-child(3n+1) {
-                    width: 50vw;
+                    width: 50%;
                     height: 33vw;
                 }
                 .slider-item:nth-child(3n+2) {
-                    width: 50vw;
+                    width: 50%;
                     height: 33vw;
                 }
                 .slider-item:nth-child(3n+3) {
-                    width: 50vw;
+                    width: 50%;
                     height: 33vw;
                 }
             }
@@ -212,17 +207,17 @@ body, html {
         align-items: stretch;
         .slider {
             .slider-track {
-                width: calc(100vw * 1.5);
+                width: calc(100% * 1.5);
                 .slider-item:nth-child(3n+1) {
-                    width: 25vw;
+                    width: 25%;
                     height: $heightslider;
                 }
                 .slider-item:nth-child(3n+2) {
-                    width: 25vw;
+                    width: 25%;
                     height: $heightslider;
                 }
                 .slider-item:nth-child(3n+3) {
-                    width: 25vw;
+                    width: 25%;
                     height: $heightslider;
                 }
             }

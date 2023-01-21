@@ -1,0 +1,30 @@
+.social_network {
+    @include flex-box($direction: row);
+    gap: 5px;
+
+    div{
+        @include flex-box($direction: row);
+        overflow: hidden;
+        border: 1px solid gray;
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        filter: opacity(50%);
+        transition: 0.5s;
+        
+        &:hover {
+            filter: opacity(100%);
+        }
+
+        img {
+            width: 70%;
+        }
+    }
+
+    &+div {
+        @include flex-box($direction: row);
+        text-transform: uppercase;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}

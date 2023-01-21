@@ -3,6 +3,7 @@
 @import "form";
 @import "gallery";
 @import "header";
+@import "footer";
 
 @mixin flex-box($direction) {
     width: 100%;
@@ -13,14 +14,13 @@
     box-sizing: border-box;
 }
 
-@mixin margins-all-zero {
+html {
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 
 body {
-    @include flex-box($direction: column);
-    @include margins-all-zero;
     margin: 0;
     padding: 0;
     position: relative;
@@ -28,40 +28,9 @@ body {
 
 .container {
     @include flex-box($direction: column);
-    max-width: 540px;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-.social_network {
-    @include flex-box($direction: row);
-    gap: 5px;
-
-    div{
-        @include flex-box($direction: row);
-        overflow: hidden;
-        border: 1px solid gray;
-        border-radius: 50%;
-        height: 50px;
-        width: 50px;
-        filter: opacity(50%);
-        transition: 0.5s;
-        
-        &:hover {
-            filter: opacity(100%);
-        }
-
-        img {
-            width: 70%;
-        }
-    }
-
-    &+div {
-        @include flex-box($direction: row);
-        text-transform: uppercase;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
+    width: 100%;
+    margin: 0 auto;
+    // max-width: 540px;
 }
 
 button {
@@ -77,7 +46,6 @@ button {
 @media (min-width: 600px) {
     div.container {
       max-width: 1000px;
-      @include margins-all-zero;
       font-size: 18px;
     }
   }

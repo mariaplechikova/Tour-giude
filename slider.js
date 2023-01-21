@@ -1,104 +1,69 @@
+let obj = {
+    // количество картинок, которые мы видим одновременно на экране
+    indexScreen: '',
+    // ширина картинки
+     widthItem: '',
+}
+// общее колличество картинок в слайдере
+let countItem = 6;
+// крайнее левое положение slider-track
 let sliderLeft = 0;
-// ширина картинки
-let widthItem;
+
 
 const track = document.querySelector('.slider-track');
 const btnPrev = document.querySelector('.btn-prev');
 const btnNext = document.querySelector('.btn-next');
 
-if (document.documentElement.clientWidth < 600) {
-    widthItem = document.documentElement.clientWidth;
+getDate();
+renderSlider(sliderLeft);
+renderButtons(sliderLeft); 
 
-    renderSlider(0);
-    renderButtons(0);
+window.addEventListener('resize', function() {
+    sliderLeft = 0;
+    getDate();
+    renderSlider(sliderLeft);
+    renderButtons(sliderLeft); 
+  });
 
-    function renderSlider(sliderLeft) {
-        track.style.left = `${sliderLeft}px`;
-    };
-
-    function renderButtons(sliderLeft) {
-        sliderLeft < 0 ? btnPrev.style.display  = 'block' : btnPrev.style.display  = 'none';
-        sliderLeft > -(widthItem * 5) ? btnNext.style.display  = 'block' : btnNext.style.display  = 'none';
+function getDate() {
+    if (document.documentElement.clientWidth < 600) {
+        obj.widthItem = document.documentElement.clientWidth;
+        obj.indexScreen = 1;
     }
-
-    btnNext.addEventListener('click', function() {
-        if (sliderLeft > -(widthItem * 5)) {
-            sliderLeft = sliderLeft - widthItem;
-            renderSlider(sliderLeft);
-        }
-        renderButtons(sliderLeft)
-    })
-
-    btnPrev.addEventListener('click', function() {
-        if (sliderLeft < 0) {
-            sliderLeft = sliderLeft + widthItem;
-            renderSlider(sliderLeft);
-        }
-        renderButtons(sliderLeft)
-    })
-
+    
+    if (document.documentElement.clientWidth < 850 && document.documentElement.clientWidth >= 650) {
+        obj.widthItem = document.documentElement.clientWidth / 2;
+        obj.indexScreen = 2;
+    }
+    
+    if (document.documentElement.clientWidth >= 850) {
+        obj.widthItem = document.documentElement.clientWidth / 4;
+        obj.indexScreen = 4;
+    }
+    return obj
 }
 
-if (document.documentElement.clientWidth < 850 && document.documentElement.clientWidth >= 650) {
-    widthItem = document.documentElement.clientWidth / 2;
+function renderSlider(sliderLeft) {
+    track.style.left = `${sliderLeft}px`;
+};
 
-    renderSlider(0);
-    renderButtons(0);
-
-    function renderSlider(sliderLeft) {
-        track.style.left = `${sliderLeft}px`;
-    };
-
-    function renderButtons(sliderLeft) {
-        sliderLeft < 0 ? btnPrev.style.display  = 'block' : btnPrev.style.display  = 'none';
-        sliderLeft > -(widthItem * 4) ? btnNext.style.display  = 'block' : btnNext.style.display  = 'none';
-    }
-
-    btnNext.addEventListener('click', function() {
-        if (sliderLeft > -(widthItem * 4)) {
-            sliderLeft = sliderLeft - widthItem;
-            renderSlider(sliderLeft);
-        }
-        renderButtons(sliderLeft)
-    })
-
-    btnPrev.addEventListener('click', function() {
-        if (sliderLeft < 0) {
-            sliderLeft = sliderLeft + widthItem;
-            renderSlider(sliderLeft);
-        }
-        renderButtons(sliderLeft)
-    })
+function renderButtons(sliderLeft) {
+    sliderLeft < 0 ? btnPrev.style.display  = 'block' : btnPrev.style.display  = 'none';
+    sliderLeft > -(obj.widthItem * (countItem - obj.indexScreen)) ? btnNext.style.display  = 'block' : btnNext.style.display  = 'none';
 }
 
-if (document.documentElement.clientWidth >= 850) {
-    widthItem = document.documentElement.clientWidth / 4;
-
-    renderSlider(0);
-    renderButtons(0);
-
-    function renderSlider(sliderLeft) {
-        track.style.left = `${sliderLeft}px`;
-    };
-
-    function renderButtons(sliderLeft) {
-        sliderLeft < 0 ? btnPrev.style.display  = 'block' : btnPrev.style.display  = 'none';
-        sliderLeft > -(widthItem * 4) ? btnNext.style.display  = 'block' : btnNext.style.display  = 'none';
+btnNext.addEventListener('click', function() {
+    if (sliderLeft > -(obj.widthItem * (countItem - obj.indexScreen))) {
+        sliderLeft = sliderLeft - obj.widthItem;
+        renderSlider(sliderLeft);
     }
+    renderButtons(sliderLeft)
+})
 
-    btnNext.addEventListener('click', function() {
-        if (sliderLeft > -(widthItem * 2)) {
-            sliderLeft = sliderLeft - widthItem;
-            renderSlider(sliderLeft);
-        }
-        renderButtons(sliderLeft)
-    })
-
-    btnPrev.addEventListener('click', function() {
-        if (sliderLeft < 0) {
-            sliderLeft = sliderLeft + widthItem;
-            renderSlider(sliderLeft);
-        }
-        renderButtons(sliderLeft)
-    })
-}
+btnPrev.addEventListener('click', function() {
+    if (sliderLeft < 0) {
+        sliderLeft = sliderLeft + obj.widthItem;
+        renderSlider(sliderLeft);
+    }
+    renderButtons(sliderLeft)
+})

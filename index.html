@@ -6,56 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/article.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/gallery.css">
-    <link rel="stylesheet" href="css/fetures.css">
-    <link rel="stylesheet" href="css/form.css">
 </head>
 <body>
-    
-    <div class="container">
 
-        <header class="header">
+    <header class="header">
 
-            <div class="header__logo">
-                tour-giude
+        <div class="header__logo">
+            tour-giude
+        </div>
+
+        <nav class="header__nav">
+
+            <div class="header__links-list">
+                <div class="header__link"><a href="#stories">Stories</a></div>
+                <div class="header__link"><a href="#galery">Galery</a></div>
+                <div class="header__link"><a href="#features">Features</a></div>
+                <div class="header__link"><a href="#write-to-us">Write to us</a></div>
             </div>
 
-            <nav class="header__nav">
+            <div class="header__burger-button">
+                <div class="header__burger"></div>
+            </div>
 
-                <div class="header__links-list">
-                    <div class="header__link"><a href="">Stories</a></div>
-                    <div class="header__link"><a href="">Galery</a></div>
-                    <div class="header__link"><a href="">Features</a></div>
-                    <div class="header__link"><a href="">Write to us</a></div>
-                </div>
+            <div class="header_social_network">
+                <div><img src="./assets/facebook-128.png"></div>
+                <div><img src="./assets/gmail-128.png"></div>
+                <div><img src="./assets/instagram-2-128.png"></div>
+                <div><img src="./assets/twitter-128.png"></div>
+                <div><img src="./assets/youtube-128.png"></div>
+            </div>
 
-                <div class="header__burger-button">
-                    <div class="header__burger"></div>
-                </div>
+        </nav>
 
-                <!-- <div class="header_social_network">
-                    <div><img src="./assets/facebook-128.png"></div>
-                    <div><img src="./assets/gmail-128.png"></div>
-                    <div><img src="./assets/instagram-2-128.png"></div>
-                    <div><img src="./assets/twitter-128.png"></div>
-                    <div><img src="./assets/youtube-128.png"></div>
-                </div> -->
-
-            </nav>
-
-        </header>
+    </header>
+    
+    <div class="container"> 
         
-        <div class="content">
+        <div class="article">
 
-            <article class="first-screen">
-                <div class="article__img">
+            <article class="article__first-screen">
+                <div class="article__first-screen__img">
                     <img src="./assets/1.jpg">
                 </div>
-                <div class="article__text">
-                    <h1 class="article__title">Let's hit the road</h1>
-                    <p class="article__paragraph">
+                <div class="article__first-screen__text">
+                    <h1>Let's hit the road</h1>
+                    <p>
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, dignissimos saepe deleniti 
                         quae dolorum esse dolorem corrupti aspernatur amet eum aliquid dolor iste deserunt tempora 
                         cumque! Necessitatibus, iusto optio? Corrupti.
@@ -66,12 +61,12 @@
                 </div>
             </article>
 
-            <article class="first-story">
-                <div class="article__img">
+            <article class="article__first-story" id="stories">
+                <div class="article__first-story__img">
                     <img src="./assets/2.jpg">
                 </div>
-                <div class="article__text">
-                    <h1 class="article__title">Story</h1>
+                <div class="article__first-story__text">
+                    <h1>Story</h1>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, dignissimos saepe deleniti 
                         quae dolorum esse dolorem corrupti aspernatur amet eum aliquid dolor iste deserunt tempora 
                         cumque! Necessitatibus, iusto optio? Corrupti.
@@ -80,12 +75,12 @@
                 </div>
             </article>
 
-            <article class="second-story">
-                <div class="article__img">
+            <article class="article__second-story">
+                <div class="article__second-story__img">
                     <img src="./assets/3.jpg">
                 </div>
-                <div class="article__text">
-                    <h1 class="article__title">Story</h1>
+                <div class="article__second-story__text">
+                    <h1>Story</h1>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, dignissimos saepe deleniti 
                         quae dolorum esse dolorem corrupti aspernatur amet eum aliquid dolor iste deserunt tempora 
                         cumque! Necessitatibus, iusto optio? Corrupti.</p>
@@ -93,8 +88,11 @@
                 </div>
             </article>
         </div>
+    
+    </div>
 
-        <h1 class="gallery_title">Gallery</h1>
+
+        <h1 class="gallery_title" id="gallery">Gallery</h1>
         <div class="gallery">
 
             <div class="slider">
@@ -163,9 +161,11 @@
             <button class="btn-prev">&#8249;</button>
             <button class="btn-next">&#8250;</button>
         
-          </div>
+        </div>
+
+    <div class="container"> 
         
-        <h1 class="features_title">Features</h1>
+        <h1 class="features_title" id="features">Features</h1>
         <div class="features">
             
             <div>
@@ -206,40 +206,40 @@
            
         </div>
 
-        <div class="form">
+        <div class="form" id="write-to-us">
 
             <h1>Write to us</h1>
 
             <div class="form__block">
 
-                <form>
+                <form name="name-form">
                     <label for="name">Name:</label>
-                    <input type="text" id="name">
+                    <input type="text" id="name" name="name">
                 </form>
 
-                <form>
+                <form name="email-form">
                     <label for="email">Email:</label>
-                    <input type="email" id="email">
+                    <input type="email" id="email" name="email">
                 </form>
 
-                <form>
+                <form name="phone-form">
                     <label for="phone">Phone:</label>
-                    <input type="text" id="phone">
+                    <input type="text" id="phone" name="phone">
                 </form>
 
             </div>
 
-            <form class="form__radio">
+            <form class="form__radio" name="contact-form">
                 <div>
                     <div>Contackt me via:</div>
 
-                    <input id="radio_email" type="radio" name="contact">
+                    <input id="radio_email" type="radio" name="contact" value="Email">
                     <label for="radio_email">Email</label>
 
-                    <input id="radio_phone" type="radio" name="contact">
+                    <input id="radio_phone" type="radio" name="contact" value="Phone">
                     <label for="radio_phone">Phone</label>
 
-                    <input id="radio_telegram" type="radio" name="contact">
+                    <input id="radio_telegram" type="radio" name="contact" value="Telegram">
                     <label for="radio_telegram">Telegram</label>
 
                 </div>
@@ -247,41 +247,42 @@
 
             <label for="topic">Topics:</label>
             <select id="topic">
-                <option>Post my story</option>
-                <option>Join the journey</option>
-                <option>Take part in the filming of the film</option>
+                <option name="topick"  value="Post my story">Post my story</option>
+                <option name="topick"  value="Join the journey">Join the journey</option>
+                <option name="topick"  value="Take part in the filming of the film">Take part in the filming of the film</option>
             </select>
 
             <label for="message">Message:</label>
-            <input id="message" type="text" class="form__message">
+            <input id="message" type="text" class="form__message" name="message">
 
-            <form class="form__checkbox">
+            <form class="form__checkbox" name="checkbox-form">
                 <div>
-                    <input id="checkbox" type="checkbox">
+                    <input id="checkbox" type="checkbox" name="checkbox">
                     <label for="checkbox"> I am a human </label>
                 </div>
-                <button>send</button>
+                <button class="send-botton">send</button>
             </form>
 
         </div>
 
-        <footer>
-            <div class="social_network">
-                <div><img src="./assets/facebook-128.png"></div>
-                <div><img src="./assets/gmail-128.png"></div>
-                <div><img src="./assets/instagram-2-128.png"></div>
-                <div><img src="./assets/twitter-128.png"></div>
-                <div><img src="./assets/youtube-128.png"></div>
-            </div>
-            <div>
-                &reg; untitled 2019
-            </div>
-        </footer>
-
     </div>
 
-    <script src="index.js"></script>
+    <footer>
+        <div class="social_network">
+            <div><img src="./assets/facebook-128.png"></div>
+            <div><img src="./assets/gmail-128.png"></div>
+            <div><img src="./assets/instagram-2-128.png"></div>
+            <div><img src="./assets/twitter-128.png"></div>
+            <div><img src="./assets/youtube-128.png"></div>
+        </div>
+        <div>
+            &reg; untitled 2019
+        </div>
+    </footer>
+
+    <script src="header.js"></script>
     <script src="slider.js"></script>
+    <script src="form.js"></script>
 
 </body>
 </html>
