@@ -12,7 +12,7 @@
     <header class="header">
 
         <div class="header__logo">
-            tour-giude
+            tour-guide
         </div>
 
         <nav class="header__nav">
@@ -92,7 +92,7 @@
     </div>
 
 
-        <h1 class="gallery_title" id="gallery">Gallery</h1>
+        <h1 class="gallery_title" id="galery">Gallery</h1>
         <div class="gallery">
 
             <div class="slider">
@@ -215,16 +215,19 @@
                 <form name="name-form">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name">
+                    <div class="form__error name-error hide">enter name</div>
                 </form>
 
                 <form name="email-form">
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email">
+                    <div class="form__error email-error hide">enter email</div>
                 </form>
 
                 <form name="phone-form">
                     <label for="phone">Phone:</label>
                     <input type="text" id="phone" name="phone">
+                    <div class="form__error phone-error hide">enter phone</div>
                 </form>
 
             </div>
@@ -233,7 +236,7 @@
                 <div>
                     <div>Contackt me via:</div>
 
-                    <input id="radio_email" type="radio" name="contact" value="Email">
+                    <input checked id="radio_email" type="radio" name="contact" value="Email">
                     <label for="radio_email">Email</label>
 
                     <input id="radio_phone" type="radio" name="contact" value="Phone">
@@ -241,16 +244,21 @@
 
                     <input id="radio_telegram" type="radio" name="contact" value="Telegram">
                     <label for="radio_telegram">Telegram</label>
-
+                    
                 </div>
             </form>
+            
 
-            <label for="topic">Topics:</label>
-            <select id="topic">
-                <option name="topick"  value="Post my story">Post my story</option>
-                <option name="topick"  value="Join the journey">Join the journey</option>
-                <option name="topick"  value="Take part in the filming of the film">Take part in the filming of the film</option>
-            </select>
+            <div class="form__topics">
+                <label for="topic">Topics:</label>
+                <select id="topic">
+                    <option name="topick"  value=""></option>
+                    <option name="topick"  value="Post my story">Post my story</option>
+                    <option name="topick"  value="Join the journey">Join the journey</option>
+                    <option name="topick"  value="Take part in the filming of the film">Take part in the filming of the film</option>
+                </select>
+                <div class="form__error topics-error hide">choose type of topics</div>
+            </div>
 
             <label for="message">Message:</label>
             <input id="message" type="text" class="form__message" name="message">
@@ -260,8 +268,12 @@
                     <input id="checkbox" type="checkbox" name="checkbox">
                     <label for="checkbox"> I am a human </label>
                 </div>
-                <button class="send-botton">send</button>
+                <button class="send-botton" submit >send</button>
             </form>
+
+            <div class="successful-sending hide">
+                successfully
+            </div>
 
         </div>
 

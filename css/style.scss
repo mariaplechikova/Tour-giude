@@ -43,6 +43,14 @@ button {
     box-shadow: none;
 }
 
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
 @media (min-width: 600px) {
     div.container {
       max-width: 1000px;

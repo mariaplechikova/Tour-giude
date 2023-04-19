@@ -90,11 +90,15 @@ $text_width_laptop: 65%;
             height: calc(100vh - 45px);
             min-height: 480px;
             &__img {
+                width: 50%;
                 order: 1;
                 & img {
                     height: 100%;
                     width: auto;
                 }
+            }
+            &__text {
+                width: 50%;
             }
         }
         &__first-story {

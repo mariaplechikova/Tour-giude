@@ -61,6 +61,23 @@
             margin: 0px;
         }
     }
+    .form__error {
+        color: red;
+        font-size: 12px;
+    }
+
+    .successful-sending {
+        position: fixed;
+        top: calc(100vh / 2 - 100px);
+        left: calc(100vw / 2 - 100px);
+        width: 200px;
+        height: 200px;
+        background-color: gray;
+        text-align: center;
+        box-sizing: border-box;
+        padding-top: 90px;
+    }
+
 }
 
 @media (min-width: 600px) {
